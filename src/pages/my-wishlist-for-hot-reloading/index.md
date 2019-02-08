@@ -36,7 +36,7 @@ But there are plenty of people who feel it isn’t as good as it could be. Some 
 
 I think I’m ready to take another attempt at implementing it. Here’s why.
 
-Ever since `createClass` stopped being the primary way we define components, **the biggest source of complexity and fragility in hot reloading components was dynamically replacing class methods.** How do you patch existing instances of classes with new “versions” of their methods? The simple answer is “replace them on the prototype” but even with Proxies, in my experience there are too many gnarly edge cases for this to work reliably.
+Ever since `createClass` stopped being the primary way we define components, **the biggest source of complexity and fragility in hot reloading components was dynamically replacing class methods.** How do you patch existing instances of classes with new “versions” of their methods? The simple answer is “replace them on the prototype”, but even with Proxies, in my experience, there are too many gnarly edge cases for this to work reliably.
 
 By comparison, hot reloading functions is easy. A Babel plugin could split any function component exported from a module into two functions:
 
